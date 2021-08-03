@@ -1,2 +1,2 @@
 # WebServerProject
-A project for Nets programming course at Unibo
+A project for networks programming course at Unibo
