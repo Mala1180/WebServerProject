@@ -1,35 +1,170 @@
-<!DOCTYPE html>
-<html lang="it" dir="ltr">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="img/favicon/comuneLogo.jpeg"/>
 
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <title>TuttoSantarcangelo</title>
+    <title>Tutto Santarcangelo</title>
 
-  <!-- JQuery -->
-  <script src="libraries/jquery-3.5.1.min.js"></script>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="libraries/bootstrap-4.5.2/css/bootstrap.min.css">
-  <script src="libraries/bootstrap-4.5.2/js/bootstrap.min.js"></script>
-</head>
 
-<body>
-  <h1>CIAOOOOO</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-6 col-md-4">
-        <h1></h1>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/album.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        One of three columns
+      <div class="navbar box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="img/logo/santarcangeloLogoScritto.jpeg" width="250px" height="90px">
+            <strong></strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4">
-        One of three columns
-      </div>
-    </div>
-  </div>
-</body>
+    </header>
 
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Tutto Santarcangelo</h1>
+          <p class="lead text-muted">All'interno di questo sito puoi trovare informazioni relative a Santarcangelo di Romagna e ai suoi numerosi eventi.</p>
+          <p>
+            <a href="#" class="btn btn-primary my-2">Scopri di più</a>
+            <a href="contact.html" class="btn btn-secondary my-2">Contattaci</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="text-center">
+                  <img class="card-img-top" style="width: 100%;" src="img/events/caliciSantarcangelo2.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                  <p class="card-text"><strong>Calici di stelle</strong>, un appuntamento sotto le stelle di Santarcangelo per poter degustare i migliori vini offerti dalle migliori cantine della zona.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="w-100 d-flex justify-content-between">
+                      <button type="button" onclick="goToArticle(0)" class="btn btn-sm btn-outline-secondary">Vedi</button>
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Salva</button> -->
+                      <svg style="align-self: right" onclick="downloadArticle(0)" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                  </svg>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="text-center">
+                <img class="card-img-top" style="width: 100%;" src="img/events/sanmartinoSantarcangelo2.png" alt="Card image cap">
+                </div> 
+                <div class="card-body">
+                  <p class="card-text"><strong>San Martino</strong>, la più tradizionale delle feste a Santarcangelo, offre divertimenti ai più piccoli ma anche intrattenimento per i più grandi.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="w-100 d-flex justify-content-between">
+                      <button type="button" onclick="goToArticle(1)" class="btn btn-sm btn-outline-secondary">Vedi</button>
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Salva</button> -->
+                      <svg style="align-self: right" onclick="downloadArticle(1)" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                  </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <div class="text-center">
+                <img class="card-img-top" style="width: 100%;" src="img/events/festivalSantarcangelo2.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                  <p class="card-text"><strong>Festival dei teatri</strong>, i migliori spettacoli offerti da artisti internazionali, oltre a una discoteca all'aperto aperta fino tarda notte.</p>
+                   <div class="d-flex justify-content-between align-items-center">
+                    <div class="w-100 d-flex justify-content-between">
+                      <button type="button" onclick="goToArticle(2)" class="btn btn-sm btn-outline-secondary">Vedi</button>
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Salva</button> -->
+                      <svg style="align-self: right" onclick="downloadArticle(2)" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                  </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Torna in alto</a>
+        </p>
+        <p>Sito realizzato per progetto di Reti in Agosto 2021</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+
+  </body>
+
+    <script type="text/javascript">
+      function downloadArticle(article){
+        alert("ciao");
+      }
+
+      function goToArticle(article){
+        alert("ciao");
+        location.href = "events/calici-di-stelle.html";
+      }
+    </script>
 </html>
