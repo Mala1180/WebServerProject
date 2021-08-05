@@ -7,11 +7,10 @@ port = 8080
 server_socket = socket.ThreadingTCPServer(("127.0.0.1", port), http.SimpleHTTPRequestHandler)
 server_socket.allow_reuse_address = True
 server_socket.daemon_threads = True
-print(server_socket.server_address)
 
 print("Web Server is listening on port %d" % port)
 
-def signal_handler():
+def signal_handler(signal, frame):
     print("Exiting server (Ctrl + C)")
     try:
         if server_socket:    
@@ -24,7 +23,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 try:
     while True:
-        print('Ready to serve...')
+        print("Ready to serve...")
         server_socket.serve_forever()
 
 except KeyboardInterrupt:
