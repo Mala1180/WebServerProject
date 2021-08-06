@@ -18,6 +18,14 @@
   <script src="libraries/bootstrap-4.5.2/js/bootstrap.min.js"></script>
   <script src="js/article.js" type="text/javascript"></script>
 
+  <style media="screen">
+    #main-section {
+      background: url('img/santarcangelo.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+  </style>
 
 <body>
 
@@ -57,25 +65,26 @@
 
   <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Tutto Santarcangelo</h1>
-        <p class="lead text-muted">All'interno di questo sito puoi trovare informazioni relative a Santarcangelo di Romagna e ai suoi numerosi eventi.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Scopri di più</a>
+    <section class="jumbotron text-center" id="main-section">
+      <div class="container" style="height: 50vh; position: relative;">
+        <h1 class="jumbotron-heading" style="color: #912E36">Tutto Santarcangelo</h1>
+        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative a Santarcangelo di Romagna e ai suoi numerosi eventi.</p>
+        <p style="position: absolute; bottom: 0; width: 96%">
+          <a href="#" class="btn btn-danger my-2">Scopri di più</a>
           <a href="contact.html" class="btn btn-secondary my-2">Contattaci</a>
         </p>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
+      <h2 class="text-center mb-5">Principali Eventi</h2>
       <div class="container">
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" style="width: 100%;" src="img/events/caliciSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/events/caliciSantarcangelo2.png" alt="Card image cap">
               </div>
               <div class="card-body">
                 <p class="card-text"><strong>Calici di stelle</strong>, un appuntamento sotto le stelle di Santarcangelo per poter degustare i migliori vini offerti dalle migliori cantine della zona.</p>
@@ -88,10 +97,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" style="width: 100%;" src="img/events/sanmartinoSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/events/sanmartinoSantarcangelo2.png" alt="Card image cap">
               </div>
               <div class="card-body">
                 <p class="card-text"><strong>San Martino</strong>, la più tradizionale delle feste a Santarcangelo, offre divertimenti ai più piccoli ma anche intrattenimento per i più grandi.</p>
@@ -104,10 +113,10 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" style="width: 100%;" src="img/events/festivalSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/events/festivalSantarcangelo2.png" alt="Card image cap">
               </div>
               <div class="card-body">
                 <p class="card-text"><strong>Festival dei teatri</strong>, i migliori spettacoli offerti da artisti internazionali, oltre a una discoteca all'aperto aperta fino tarda notte.</p>
@@ -119,13 +128,51 @@
               </div>
             </div>
           </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="card mb-4 box-shadow">
+              <div class="text-center">
+                <img class="card-img-top" src="img/events/balconi-fioriti.jpeg" alt="Card image cap">
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Balconi Fioriti</strong>, appuntamento dedicato al mondo della natura.
+                  Balconi, terrazzi, giardini, vetrine esibiscono una esplosione di colori e di profumi. Fiori dai mille colori,
+                  piante e decorazioni impreziosiscono la città donandole un’atmosfera da fiaba.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="w-100 d-flex justify-content-between">
+                    <button type="button" onclick="goToArticle(3)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="card mb-4 box-shadow">
+              <div class="text-center">
+                <img class="card-img-top" src="img/events/fiera-san-michele.png" alt="Card image cap">
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Fiera di San Michele</strong>, conosciuta come “Fiera degli uccelli” è
+                  un appuntamento dedicato al mondo degli animali, della natura e all’ambiente.
+                  Sono organizzati eventi e mostre a tema.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="w-100 d-flex justify-content-between">
+                    <button type="button" onclick="goToArticle(4)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
   </main>
 
-  <footer class="text-muted">
+  <footer class="text-muted p-4">
     <div class="container">
       <p class="float-right">
         <a href="#">Torna in alto</a>
@@ -136,9 +183,6 @@
 
 </body>
 
-<script type="text/javascript">
-</script>
-
-  </body>
+</body>
 
 </html>
