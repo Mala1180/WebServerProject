@@ -16,6 +16,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="libraries/bootstrap-4.5.2/css/bootstrap.min.css">
   <script src="libraries/bootstrap-4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
   <script src="js/article.js" type="text/javascript"></script>
 
   <style media="screen">
@@ -38,12 +39,11 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
-            <h4>About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites
-              or contact information.</p>
+            <h4>TuttoSantarcangelo</h4>
+            <p class="text-muted">TuttoSantarcangelo è stata creata per mantenere informati i turisti sugli eventi di Santarcangelo di Romagna che sono interessati ai numerosi eventi oltre a dare una breve descrizione.</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
-            <h4>Contact</h4>
+            <h4>Contatti</h4>
             <ul class="list-unstyled">
               <li><a href="https://instagram.com/santarcangelo_di_romagna?utm_medium=copy_link">Instagram</a></li>
               <li><a href="https://www.facebook.com/TurismoSantarcangelodiRomagnaOfficial/">Facebook</a></li>
@@ -56,7 +56,7 @@
     <div class="navbar navbar-light bg-light box-shadow">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
-          <img src="img/logo/santarcangeloLogoScritto.jpeg" width="250px" height="90px">
+          <img src="img/logo/santarcangeloLogoScritto.png" width="250px" height="90px">
           <strong></strong>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,10 +71,9 @@
     <section class="jumbotron text-center" id="main-section">
       <div class="container" style="height: 50vh; position: relative;">
         <h1 class="jumbotron-heading" style="color: #912E36">TuttoSantarcangelo</h1>
-        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative ai numerosi eventi di Santarcangelo di Romagna.</p>
+        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative agli eventi di Santarcangelo di Romagna.</p>
         <p style="position: absolute; bottom: 0; width: 96%">
           <a href="#events" class="btn btn-danger my-2">Scopri di più</a>
-          <a href="contact.html" class="btn btn-secondary my-2">Contattaci</a>
         </p>
       </div>
     </section>
@@ -94,6 +93,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(0)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(0)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
 
@@ -110,6 +110,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(1)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(1)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -126,6 +127,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(2)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(2)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -145,6 +147,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(3)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(3)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -164,6 +167,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(4)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(4)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>

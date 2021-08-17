@@ -23,108 +23,34 @@
 <body>
 
   <header>
-    <div class="collapse bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites
-              or contact information.</p>
-          </div>
-          <div class="col-sm-4 offset-md-1 py-4">
-            <h4 class="text-white">Contact</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Follow on Twitter</a></li>
-              <li><a href="#" class="text-white">Like on Facebook</a></li>
-              <li><a href="#" class="text-white">Email me</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="navbar box-shadow">
       <div class="container d-flex justify-content-between">
         <a href="../index.html" class="navbar-brand d-flex align-items-center">
-          <img src="../img/logo/santarcangeloLogoScritto.jpeg" width="250px" height="90px">
+          <img src="../img/logo/santarcangeloLogoScritto.png" width="250px" height="90px">
           <strong></strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
     </div>
   </header>
 
   <main role="main">
-
     <section class="jumbotron text-center">
       <div class="container">
         <h1 id="pageTitle" class="jumbotron-heading">San Martino</h1>
-        <p id="pageLittleDescription" class="lead text-muted">La fiera di San Martino è la più famosa di Santarcangelo, sono presenti bancarelle di prodotti tipici, cibo di strada e mercatini dell'usato, inoltre
-        sono immancabili le giostre presenti all'Area Campana in fondo al viale di Santarcangelo</p>
+        <p id="articleDescription" class="text-muted">
+        </p>
         <p>
           <a href="../index.html" class="btn btn-primary my-2">Torna alla home</a>
         </p>
       </div>
     </section>
 
-
     <section class="p-5">
       <div id="article">
-        <p>
-          La Fiera di San Martino è conosciuta come “La Festa dei Becchi”, si tiene l'11 Novembre e nei week-end antecedenti o successivi. Per l’occasione vengono appese sotto l’Arco in piazza Ganganelli delle gigantesche corna. La tradizione vuole
-          che oscillino al passaggio delle persone tradite. Attenzione dunque a passare sotto l’arco nelle giornate di vento!
+        <p id="articleText">
         </p>
-
-        <p>
-          Tutta la città è allietata da bancarelle e stand in cui sono proposte le eccellenze enogastronomiche locali e quelle provenienti dalle varie regioni italiane.
-        </p>
-
-        <p>
-          Imperdibile è il palio della piadina, una simpaticissima competizione fra improvvisati “piadinari”, non professionisti, alle prese con farina e mattarello.
-        </p>
-
-        <p>
-          Al suo interno contiene ancora oggi la sagra nazionale dei cantastorie.
-        </p>
-
-        <p>
-          Per chi venisse alla fiera per la prima volta consigliamo di assaporare una piadina calda farcita con salsiccia e cipolla di produzione santarcangiolese, accompagnata da un calice di vino Sangiovese. Dessert per l’occasione: caldarroste e
-          un bicchiere di Cagnina dolce.
-        </p>
-
-        <p>
-          Le fiere delle zone rurali furono per secoli appuntamenti importanti e insostituibili per la libera circolazione di persone, animali e prodotti.
-        </p>
-
-        <p>
-          In particolare San Martino è, ormai da due secoli, la festa principale della città di Santarcangelo. Quest’ultima è legata ad un preciso momento dell’annata agraria: con la vendita del vino nuovo, infatti, si concludeva l’anno contadino.
-          Inoltre si dava inizio a cambiamenti molto importanti nell’ambito del lavoro agricolo, come ad esempio un rinnovo di un contratto tra proprietari terrieri e mezzadri, l’acquisto di nuovo materiale per il lavoro nei campi e la vendita di
-          bestiame.
-        </p>
-
-        <p>
-          Il lato profano della festa è rappresentato dalle corna che vengono appese ogni anno sotto l’arco: sono ornate da colorati cordoni di maglia, un tempo utilizzati per addobbare i forti buoi romagnoli quando venivano portati alle fiere.
-          Vengono allestite dai primi di Novembre fino alla successiva domenica alla Fiera, quando viene disputata la gara podistica detta, per l’appunto, “cheursa di bec”.
-        </p>
-
-        <p>
-          L’origine delle corna come simbolo non è data per certa; si può supporre che si rifaccia alla tradizione gallico celtica o alla provenienza agricola.
-        </p>
-
-        <p>
-          Questo è un altro dei tanti piccoli misteri che avvolgono la città di Santarcangelo.
-        </p>
-
       </div>
     </section>
-
-    <div class="album p-5 bg-light">
-      <div class="form-group row" id="pageDescription">testo da scaricare perche ci vuole, questo testo sara da cambiare con una descrizione esattamente copia e incollata spudoratamente dal primo link che risulta cercando calici di stelle
-        santarczngelo su google, spero si faccia presto che non ne posso piu, sto diventando buiz
-      </div>
-      <input class="btn btn-primary my-2" type="button" id="btnDownloadArticle" value="download" onclick="downloadArticle(1)">
-    </div>
   </main>
 
   <footer class="text-muted p-4">
@@ -136,5 +62,13 @@
     </div>
   </footer>
 </body>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $.getJSON("../articles/articles.json", function(json) {
+          articleText.innerHTML = json["Articles"][1]["Text"];
+          articleDescription.innerHTML = json["Articles"][4]["Description"];
+      });
+  });
+</script>
 
 </html>

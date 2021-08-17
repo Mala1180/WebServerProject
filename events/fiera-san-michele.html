@@ -23,36 +23,12 @@
 <body>
 
   <header>
-    <div class="collapse bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites
-              or contact information.</p>
-          </div>
-          <div class="col-sm-4 offset-md-1 py-4">
-            <h4 class="text-white">Contact</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Follow on Twitter</a></li>
-              <li><a href="#" class="text-white">Like on Facebook</a></li>
-              <li><a href="#" class="text-white">Email me</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
     <div class="navbar box-shadow">
       <div class="container d-flex justify-content-between">
         <a href="../index.html" class="navbar-brand d-flex align-items-center">
-          <img src="../img/logo/santarcangeloLogoScritto.jpeg" width="250px" height="90px">
+          <img src="../img/logo/santarcangeloLogoScritto.png" width="250px" height="90px">
           <strong></strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
       </div>
     </div>
   </header>
@@ -62,11 +38,8 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 id="pageTitle" class="jumbotron-heading">Fiera di San Michele</h1>
-        <p id="pageLittleDescription" class="lead text-muted">Conosciuta come “Fiera degli uccelli”.
-          Appuntamento dedicato al mondo degli animali, della natura e all’ambiente.
-          Sono organizzati eventi e mostre a tema. Per i più piccoli e non solo, si svolgono iniziative didattiche, laboratori legati al mondo degli animali e della natura.
-          Numerose bancarelle nelle vie del centro esibiscono articoli per il giardinaggio, piante, fiori e prodotti naturali.
-          Assolutamente imperdibile la gara canora degli uccelli.</p>
+        <p id="articleDescription" class="text-muted">
+        </p>
         <p>
           <a href="../index.html" class="btn btn-primary my-2">Torna alla home</a>
         </p>
@@ -75,32 +48,11 @@
 
     <section class="p-5">
       <div id="article">
-        <p>
-          La Fiera di San Michele è la prima delle grandi fiere autunnali che si svolgono a Santarcangelo di Romagna, ed è uno dei tanti appuntamenti a carattere commerciale e culturale. Questa manifestazione è
-          conosciuta come "Fiera degli uccelli" poiché, vi si svolge una singolare competizione, la "Gara canora per uccelli" alla quale partecipano allevatori di richiami vivi.
+        <p id="articleText">
         </p>
-
-        <p>
-          I legami con il mondo della caccia sono testimoniati da un editto risalente all'epoca malatestiana in cui si parla della caccia con il falcone e del relativo commercio in tempo di fiera. La fiera di San Michele predilige i temi dedicati
-          alla natura, agli animali e all'ambiente, con mostre ed iniziative dedicate ad essi.
-        </p>
-
-        <p>
-          Tra le cose da comprare: articoli per il giardinaggio in piazza Ganganelli per l’occasione ribattezzata “La piazza verde” e letteralmente ricoperta di piante e fiori, e i prodotti naturali e biologici, in vendita nel “Mercato della salute”
-          che si snoda nel centro del paese.
-        </p>
-
       </div>
     </section>
 
-
-    <div class="album p-5 bg-light">
-      <div class="container">
-        <div class="form-group row" id="pageDescription">testo da scaricare perche ci vuole, questo testo sara da cambiare con una descrizione esattamente copia e incollata spudoratamente dal primo link che risulta cercando calici di stelle
-          santarczngelo su google, spero si faccia presto che non ne posso piu, sto diventando buiz
-        </div>
-        <input class="btn btn-primary my-2" type="button" id="btnDownloadArticle" value="download" onclick="downloadArticle(0)">
-      </div>
     </div>
     </div>
   </main>
@@ -115,5 +67,13 @@
   </footer>
 
 </body>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $.getJSON("../articles/articles.json", function(json) {
+      articleText.innerHTML = json["Articles"][4]["Text"];
+      articleDescription.innerHTML = json["Articles"][4]["Description"];
+    });
+  });
+</script>
 
 </html>
