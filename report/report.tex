@@ -1,0 +1,119 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[italian]{babel}
+\usepackage[italian]{cleveref}
+\usepackage{graphicx}
+
+
+\title{\textbf{Traccia 2: Python Web Server}
+Realizzazione di un server che gestisca un sito di articoli}
+
+\author{
+\\Matteini Mattia
+\\Paganelli Alberto
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{Introduzione}
+
+\section{Descrizione}
+Si vuole realizzare un sito web per la gestione di articoli riguardanti gli eventi della città di Santarcangelo di Romagna.
+\\
+All’interno di TuttoSantarcangelo saranno presenti tutti i principali eventi di Santarcangelo in un'unica piattaforma web. Potrà essere consultato dai turisti, dai cittadini più curiosi o da chi vuole mantenersi aggiornato sulle principali novità della città.
+\\
+Sarà presente una homepage del sito web contenente una piccola preview e descrizione dell’articolo oltre ad un bottone per consentirne il download e quindi la lettura anche in locale.
+\\
+Nell’homepage saranno presenti link per consentire la lettura dell’intero articolo in una pagina html apposita ed in quest’ultima è presente un bottone per tornare all’homepage.
+\\
+Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link ai social network. 
+
+
+\section{Requisiti}
+
+\begin{enumerate}
+    \item \textsc{Il server dovrà mantenere più connessioni in contemporanea per garantire la lettura a più utenti}
+    \item \textsc{Nell’homepage dovranno essere presenti dei collegamenti agli articoli}
+    \item \textsc{Possibilità di scaricare un pdf per ogni articolo}
+    \item \textsc{Pagina HTML singola per ogni articolo}
+\end{enumerate}
+ 
+
+
+\chapter{Design}
+
+\section{Client}
+
+\clearpage
+
+\section{Server}
+Il server scritto in \textbf{Python} utilizza il package \texttt{socketserver} e in particolare la classe \textbf{ThreadingTCPServer} per gestire molteplici semplici richieste alla volta.
+Per la costruzione dell’istanza si inserisce nessun indirizzo locale nello specifico così in automatico riconoscerà l’accesso sia da localhost e da indirizzo ip del proprio computer nella rete al quale è connesso (esempio: 192.168.1.20.
+Per la gestione delle richieste utilizziamo la classe \textbf{SimpleHTTPRequestHandler}, appartenente al package \texttt{http}, che è più che necessario per il nostro applicativo.
+\\
+\\
+Come operazioni preliminari rendiamo utilizzabile lo stesso indirizzo IP a più richieste in entrata (\texttt{allow\_reuse\_address}), e poi facciamo si che quando il programma termina vengano terminati anche tutti i threads in sospeso generati dal server (\texttt{daemon\_threads}).
+\\
+\\
+Successivamente definiamo un metodo che gestisca l’uscita dal programma e la chiusura del socket server, per questo utilizziamo il package \texttt{signal} che ci permette di intercettare i diversi segnali mandati al processo, in questo caso un SIGINT (2).
+\\
+\\
+Infine abbiamo un \texttt{while True} dentro al quale chiamiamo il metodo \texttt{server\_forever} che dà vita a un nuovo thread che gestirà le richieste che arrivano e bloccherà il thread principale, inoltre lasciamo il \texttt{poll\_interval} di default che è di 0.5 secondi, quindi ogni mezzo secondo verrà controllato se viene ricevuto una richiesta di shutdown.
+
+\chapter{Guida}
+Per avviare il server basterà dare il seguente comando da terminale \texttt{"python server.py PORT"} dove PORT è il numero della porta che si vuole utilizzare per l’ascolto, se non si inserisce nessun parametro di default verrà utilizzata la porta 8080.
+
+
+\begin{figure}[ht]
+    \begin{center}
+        \centering
+        \includegraphics[width=\textwidth]{img/Terminale1.png}
+    \end{center}
+\end{figure}
+
+\clearpage
+
+Per visualizzare la pagina principale basterà avviare un browser e digitare il seguente link \texttt{"localhost:PORT/index.html"}, sostituendo PORT col numero di porta che si è data al server.
+\\
+\\
+N.B. si può anche digitare l'indirizzo IP della macchina sulla quale sta girando il server al posto di utilizzare \texttt{"localhost"}.
+\\
+\\
+\begin{figure}[ht]
+    \begin{center}
+        \centering
+        \includegraphics[scale=.8]{img/Link.png}
+    \end{center}
+\end{figure}
+\\
+\\
+\begin{figure}[ht]
+    \begin{center}
+        \centering
+        \hspace*{-0.8in}
+        \includegraphics[scale=.35]{img/Home1.png}
+    \end{center}
+\end{figure}
+
+\clearpage
+
+Si può notare la gestione delle richieste effettuate dal browser verso il server, il quale risponde con i percorsi delle risorse necessitate dal browser per far visualizzare la pagina web (file, immagini, ecc...).
+\\
+\\
+\begin{figure}[ht]
+    \begin{center}
+        \centering
+        \includegraphics[width=\textwidth]{img/Terminale2.png}
+    \end{center}
+\end{figure}
+
+
+
+\end{document}
