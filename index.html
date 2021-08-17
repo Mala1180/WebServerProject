@@ -16,6 +16,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="libraries/bootstrap-4.5.2/css/bootstrap.min.css">
   <script src="libraries/bootstrap-4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
   <script src="js/article.js" type="text/javascript"></script>
 
   <style media="screen">
@@ -32,37 +33,36 @@
 
 <body>
 
+
   <header>
-    <div class="collapse bg-dark" id="navbarHeader">
+    <div class="collapse bg-light" id="navbarHeader">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites
-              or contact information.</p>
+            <h4>TuttoSantarcangelo</h4>
+            <p class="text-muted">TuttoSantarcangelo è stata creata per mantenere informati i turisti sugli eventi di Santarcangelo di Romagna che sono interessati ai numerosi eventi oltre a dare una breve descrizione.</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
-            <h4 class="text-white">Contact</h4>
+            <h4>Contatti</h4>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Follow on Twitter</a></li>
-              <li><a href="#" class="text-white">Like on Facebook</a></li>
-              <li><a href="#" class="text-white">Email me</a></li>
+              <li><a href="https://instagram.com/santarcangelo_di_romagna?utm_medium=copy_link">Instagram</a></li>
+              <li><a href="https://www.facebook.com/TurismoSantarcangelodiRomagnaOfficial/">Facebook</a></li>
+              <li><a href="mailto:turismo@comune.santarcangelo.rn.it">Email</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="navbar box-shadow">
+    <div class="navbar navbar-light bg-light box-shadow">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
-          <img src="img/logo/santarcangeloLogoScritto.jpeg" width="250px" height="90px">
+          <img src="img/logo/santarcangeloLogoScritto.png" width="250px" height="90px">
           <strong></strong>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-
     </div>
   </header>
 
@@ -70,11 +70,10 @@
 
     <section class="jumbotron text-center" id="main-section">
       <div class="container" style="height: 50vh; position: relative;">
-        <h1 class="jumbotron-heading" style="color: #912E36">Tutto Santarcangelo</h1>
-        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative a Santarcangelo di Romagna e ai suoi numerosi eventi.</p>
+        <h1 class="jumbotron-heading" style="color: #912E36">TuttoSantarcangelo</h1>
+        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative agli eventi di Santarcangelo di Romagna.</p>
         <p style="position: absolute; bottom: 0; width: 96%">
           <a href="#events" class="btn btn-danger my-2">Scopri di più</a>
-          <a href="contact.html" class="btn btn-secondary my-2">Contattaci</a>
         </p>
       </div>
     </section>
@@ -90,10 +89,11 @@
                 <img class="card-img-top" src="img/events/caliciSantarcangelo2.png" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Calici di stelle</strong>, un appuntamento sotto le stelle di Santarcangelo per poter degustare i migliori vini offerti dalle migliori cantine della zona.</p>
+                <p class="card-text"><strong>Calici di stelle</strong>, un appuntamento sotto le stelle di Santarcangelo per poter degustare i migliori vini offerti dalle cantine della zona.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(0)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(0)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
 
@@ -110,6 +110,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(1)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(1)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -126,6 +127,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(2)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(2)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -145,6 +147,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(3)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(3)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -164,6 +167,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(4)" class="btn btn-sm btn-outline-secondary">Leggi</button>
+                    <button type="button" onclick="downloadArticle(4)" class="btn btn-sm btn-outline-secondary">Download</button>
                   </div>
                 </div>
               </div>
@@ -185,15 +189,5 @@
   </footer>
 
 </body>
-
-<script type="text/javascript">
-  function scrollToAnchor(aid) {
-    var aTag = $("a[name='" + aid + "']");
-    console.log(aTag);
-    $('html,body').animate({
-      scrollTop: aTag.offset().top
-    }, 'slow');
-  }
-</script>
 
 </html>
