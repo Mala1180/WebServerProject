@@ -3,12 +3,18 @@ import signal
 import socketserver as socket
 import http.server as http
 
-port = 8080
-server_socket = socket.ThreadingTCPServer(("0.0.0.0", port), http.SimpleHTTPRequestHandler)
+# Legge il numero della porta dalla riga di comando
+if sys.argv[1:]:
+    port = int(sys.argv[1])
+else:
+    port = 8080
+
+server_socket = socket.ThreadingTCPServer(("", port), http.SimpleHTTPRequestHandler)
 server_socket.allow_reuse_address = True
 server_socket.daemon_threads = True
 
 print("Web Server is listening on port %d" % port)
+
 
 def signal_handler(signal, frame):
     print("Exiting server (Ctrl + C)")
