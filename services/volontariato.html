@@ -41,6 +41,7 @@
         <p id="articleDescription" class="text-muted">
         </p>
         <p>
+          <a onclick="downloadVolunteers()" class="btn btn-primary my-2">Download</a>
           <a href="../index.html" class="btn btn-primary my-2">Torna alla home</a>
         </p>
       </div>
@@ -51,8 +52,15 @@
         <p id="articleText">
         </p>
         <div id="tableVolunteers">
-          <ul class="list-group" id="listVolunteers">
-          </ul> 
+          <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Mario Rossi +39 0000000000</li>
+            <li class="list-group-item">Luigi Bianchi +39 0000000000</li>
+            <li class="list-group-item">Mattia Verdi +39 0000000000</li>
+            <li class="list-group-item">Giacomo Neri +39 0000000000</li>
+            <li class="list-group-item">Nicola Renati +39 0000000000</li>
+            <li class="list-group-item">Roberto Grigi +39 0000000000</li>
+            <li class="list-group-item">Sauro Ceseta +39 0000000000</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -71,25 +79,4 @@
   </footer>
 
 </body>
-<script type="text/javascript">
-  /*$(document).ready(function() {
-    $.getJSON("../datad/volunteers.json", function(json) {
-    var child = "";
-    console.log(json["Volunteers"]);
-    for(var i = 0; i < json["Volunteers"].length; i++){
-      child +='<li class="list-group-item">' + json["Volunteers"][i]["Nome"] + json["Volunteers"][i]["Cognome"] + json["Volunteers"][i]["Telefono"] +'</li>'
-    }
-
-    listVolunteers.append(child);
-    });
-  });*/
-  $(document).ready(function() {
-    $.getJSON("../datad/volunteers.json", function(json) {
-      console.log(json["Volunteers"]);
-      // articleText.innerHTML = json["Services"][4]["Text"];
-      // articleDescription.innerHTML = json["Services"][4]["Description"];
-    });
-  });
-</script>
-
 </html>
