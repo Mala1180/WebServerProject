@@ -33,18 +33,20 @@ Sarà presente una homepage del sito web contenente una piccola preview e descri
 \\
 Nell’homepage saranno presenti link per consentire la lettura dell’intero articolo in una pagina html apposita ed in quest’ultima è presente un bottone per tornare all’homepage.
 \\
-Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link ai social network. 
+Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link ai social network.
 
+\clearpage
 
 \section{Requisiti}
 
 \begin{enumerate}
-    \item \textsc{Il server dovrà mantenere più connessioni in contemporanea per garantire la lettura a più utenti}
-    \item \textsc{Nell’homepage dovranno essere presenti dei collegamenti agli articoli}
-    \item \textsc{Possibilità di scaricare un pdf per ogni articolo}
-    \item \textsc{Pagina HTML singola per ogni articolo}
+    \item \textsc{Il server dovrà mantenere più connessioni in contemporanea per garantire l'accesso a più utenti}
+    \item \textsc{Nell’homepage dovranno essere presenti dei collegamenti ai servizi offerti}
+    \item \textsc{Possibilità di scaricare un pdf per ogni servizio}
+    \item \textsc{Interruzione dell'esecuzione opportunamente gestita}
+    \item \textsc{Pagina HTML singola per ogni servizio}
 \end{enumerate}
- 
+
 
 
 \chapter{Design}
@@ -54,7 +56,7 @@ Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovar
 \clearpage
 
 \section{Server}
-Il server scritto in \textbf{Python} utilizza il package \texttt{socketserver} e in particolare la classe \textbf{ThreadingTCPServer} per gestire molteplici semplici richieste alla volta.
+Il server scritto in \textbf{Python} utilizza il package \texttt{socketserver} e in particolare la classe \textbf{ThreadingTCPServer} per gestire molteplici e semplici richieste alla volta.
 Per la costruzione dell’istanza si inserisce nessun indirizzo locale nello specifico così in automatico riconoscerà l’accesso sia da localhost e da indirizzo ip del proprio computer nella rete al quale è connesso (esempio: 192.168.1.20.
 Per la gestione delle richieste utilizziamo la classe \textbf{SimpleHTTPRequestHandler}, appartenente al package \texttt{http}, che è più che necessario per il nostro applicativo.
 \\

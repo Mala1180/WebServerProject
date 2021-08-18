@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" type="image/png" href="img/favicon/comuneLogo.jpeg" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
 
-  <title>TuttoSantarcangelo</title>
+  <title>Policlinico di Milano</title>
 
 
   <!-- JQuery -->
@@ -25,9 +25,20 @@
     }
 
     #main-section {
-      background: url('img/santarcangelo.jpeg');
+      background: url('img/NuovoPoliclinico.jpeg');
       background-size: cover;
       background-position: center;
+      position: relative;
+    }
+
+    #main-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, transparent 50%);
     }
   </style>
 
@@ -39,15 +50,15 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
-            <h4>TuttoSantarcangelo</h4>
-            <p class="text-muted">TuttoSantarcangelo è stata creata per mantenere informati i turisti sugli eventi di Santarcangelo di Romagna che sono interessati ai numerosi eventi oltre a dare una breve descrizione.</p>
+            <h4>Policlinico di Milano</h4>
+            <p class="text-muted">Il miglior riferimento per ogni età della vita</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4>Contatti</h4>
             <ul class="list-unstyled">
-              <li><a href="https://instagram.com/santarcangelo_di_romagna?utm_medium=copy_link">Instagram</a></li>
-              <li><a href="https://www.facebook.com/TurismoSantarcangelodiRomagnaOfficial/">Facebook</a></li>
-              <li><a href="mailto:turismo@comune.santarcangelo.rn.it">Email</a></li>
+              <li><a href="https://www.linkedin.com/company/policlinico-milano/">Linkedin</a></li>
+              <li><a href="https://www.facebook.com/PoliclinicoMilanoOfficial/">Facebook</a></li>
+              <li><a href="mailto:cartellecliniche@policlinico.mi.it">Email per cartelle cliniche</a></li>
             </ul>
           </div>
         </div>
@@ -56,7 +67,7 @@
     <div class="navbar navbar-light bg-light box-shadow">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
-          <img src="img/logo/santarcangeloLogoScritto.png" width="250px" height="90px">
+          <img src="img/logo.png" width="350px">
           <strong></strong>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,26 +81,26 @@
 
     <section class="jumbotron text-center" id="main-section">
       <div class="container" style="height: 50vh; position: relative;">
-        <h1 class="jumbotron-heading" style="color: #912E36">TuttoSantarcangelo</h1>
-        <p class="lead" style="color: #B75054">All'interno di questo sito puoi trovare informazioni relative agli eventi di Santarcangelo di Romagna.</p>
+        <h1 class="jumbotron-heading" style="color: #00238E">Policlinico di Milano</h1>
+        <p class="lead" style="color: #0051B8">Il miglior riferimento per ogni età della vita</p>
         <p style="position: absolute; bottom: 0; width: 96%">
-          <a href="#events" class="btn btn-danger my-2">Scopri di più</a>
+          <a href="#events" class="btn btn-primary my-2">Scopri di più</a>
         </p>
       </div>
     </section>
 
     <div class="album py-5 bg-light" id="events">
-      <h2 class="text-center mb-5">Principali Eventi</h2>
+      <h2 class="text-center mb-5">Servizi al Paziente</h2>
       <div class="container">
 
         <div class="row">
           <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" src="img/events/caliciSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/services/esami-laboratorio.jpeg" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Calici di stelle</strong>, un appuntamento sotto le stelle di Santarcangelo per poter degustare i migliori vini offerti dalle cantine della zona.</p>
+                <p class="card-text"><strong>Esami di Laboratorio</strong>, consulta gli esiti degli esami di laboratorio che hai fatto.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(0)" class="btn btn-sm btn-outline-secondary">Leggi</button>
@@ -103,10 +114,10 @@
           <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" src="img/events/sanmartinoSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/services/referti.jpeg" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>San Martino</strong>, la più tradizionale delle feste a Santarcangelo, offre divertimenti ai più piccoli ma anche intrattenimento per i più grandi.</p>
+                <p class="card-text"><strong>Referti</strong>, ritirali comodamente da casa tua o vieni in ospedale.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(1)" class="btn btn-sm btn-outline-secondary">Leggi</button>
@@ -120,10 +131,10 @@
           <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" src="img/events/festivalSantarcangelo2.png" alt="Card image cap">
+                <img class="card-img-top" src="img/services/cartella-clinica.jpeg" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Festival dei teatri</strong>, i migliori spettacoli offerti da artisti internazionali, oltre a una discoteca all'aperto aperta fino tarda notte.</p>
+                <p class="card-text"><strong>Cartella Clinica</strong>, richiedi la tua cartella clinica e altra documentazione sanitaria.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
                     <button type="button" onclick="goToArticle(2)" class="btn btn-sm btn-outline-secondary">Leggi</button>
@@ -137,12 +148,10 @@
           <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" src="img/events/balconi-fioriti.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="img/services/ricovero.jpeg" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Balconi Fioriti</strong>, appuntamento dedicato al mondo della natura.
-                  Balconi, terrazzi, giardini, vetrine esibiscono una esplosione di colori e di profumi. Fiori dai mille colori,
-                  piante e decorazioni impreziosiscono la città donandole un’atmosfera da fiaba.
+                <p class="card-text"><strong>Ricovero e Orari</strong>, scopri i nostri trattamenti per i ricoverati e gli orari di visita.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">
@@ -157,12 +166,10 @@
           <div class="col-sm-6 col-md-4">
             <div class="card mb-4 box-shadow">
               <div class="text-center">
-                <img class="card-img-top" src="img/events/fiera-san-michele.png" alt="Card image cap">
+                <img class="card-img-top" src="img/services/volontariato.jpeg" alt="Card image cap">
               </div>
               <div class="card-body">
-                <p class="card-text"><strong>Fiera di San Michele</strong>, conosciuta come “Fiera degli uccelli” è
-                  un appuntamento dedicato al mondo degli animali, della natura e all’ambiente.
-                  Sono organizzati eventi e mostre a tema.
+                <p class="card-text"><strong>I nostri Volontari</strong>, scopri i numerosi volontari che ci aiutano a rendere la tua vita sempre migliore.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="w-100 d-flex justify-content-between">

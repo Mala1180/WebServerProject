@@ -1,19 +1,19 @@
 function goToArticle(article) {
   switch (article) {
     case 0:
-      location.href = "events/calici-di-stelle.html";
+      location.href = "services/esami-laboratorio.html";
       break;
     case 1:
-      location.href = "events/san-martino-santarcangelo.html";
+      location.href = "services/referti.html";
       break;
     case 2:
-      location.href = "events/festival-santarcangelo.html";
+      location.href = "services/cartella-clinica.html";
       break;
     case 3:
-      location.href = "events/balconi-fioriti.html";
+      location.href = "services/ricovero.html";
       break;
     case 4:
-      location.href = "events/fiera-san-michele.html";
+      location.href = "services/volontariato.html";
       break;
   }
 }
@@ -27,10 +27,10 @@ function downloadArticle(article) {
   var numberWords = 0;
   var json = $.getJSON("articles/articles.json", function(json) {
     var title = "", description = "", text = "";
-          title = json["Articles"][article]["Title"];
-          description  = json["Articles"][article]["Description"];
-          text = json["Articles"][article]["Text"];
-          words = json["Articles"][article]["Text"].split(" ");
+          title = json["Services"][article]["Title"];
+          description  = json["Services"][article]["Description"];
+          text = json["Services"][article]["Text"];
+          words = json["Services"][article]["Text"].split(" ");
           numberWords = words.length;
           doc.text(20, 20, title);
           doc.text(20, 30, description);
@@ -62,25 +62,25 @@ function downloadArticle(article) {
           console.log(rows);
           doc.save(getTitle(article) + '.pdf');
   });
-  
+
 }
 
 function getTitle(article) {
   switch (article) {
     case 0:
-      return "Calici di stelle"
+      return "Esami di Laboratorio"
       break;
     case 1:
-      return "San Martino"
+      return "Referti"
       break;
     case 2:
-      return "Santarcangelo Festival 2050"
+      return "Cartella Clinica"
       break;
     case 3:
-      return "Balconi Fioriti"
+      return "Ricovero e Orari"
       break;
     case 4:
-      return "Fiera di San Michele"
+      return "I nostri Volontari"
       break;
   }
 }
