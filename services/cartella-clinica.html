@@ -39,6 +39,7 @@
       <div class="container">
         <h1 id="pageTitle" class="jumbotron-heading">Cartella Clinica</h1>
         <p id="articleDescription" class="text-muted">
+          Guarda la tua cartella clinica online oppure richiedi un appuntamento
         </p>
         <p>
           <a href="../index.html" class="btn btn-primary my-2">Torna alla home</a>
@@ -49,6 +50,24 @@
     <section class="p-5">
       <div id="article">
         <p id="articleText">
+          Come richiedere la documentazione sanitaria
+          Puoi richiedere la cartella clinica e altra documentazione sanitaria (copia referto ambulatoriale, verbale di pronto soccorso) nel modo che preferisci.
+
+          È necessario allegare una copia del documento d’identità del richiedente e l’eventuale documentazione legale a supporto della dichiarazione sostitutiva di certificazione.
+
+          Online
+          Scarica e compila il modulo di richiesta o il modulo per la delega
+          Invia la richiesta: clicca qui
+          Sportello
+          Sportello Cartelle Cliniche
+          Via Francesco Sforza, 35
+          Lun. - Ven: 8.00 - 15.00
+
+
+          02 5503.2455 (per info telefoniche - dalle ore 10.00 alle 12.00)
+
+          cartellecliniche@policlinico.mi.it
+          cartellecliniche@pec.policlinico.mi.it
         </p>
       </div>
     </section>
@@ -68,10 +87,10 @@
 </body>
 <script type="text/javascript">
   $(document).ready(function() {
-    $.getJSON("../articles/articles.json", function(json) {
-      articleText.innerHTML = json["Services"][2]["Text"];
-      articleDescription.innerHTML = json["Services"][4]["Description"];
-    });
+    //$.getJSON("../articles/articles.json", function(json) {
+      // articleText.innerHTML = json["Services"][2]["Text"];
+      // articleDescription.innerHTML = json["Services"][4]["Description"];
+    //});
   });
 </script>
 

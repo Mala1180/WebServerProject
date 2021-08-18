@@ -72,7 +72,7 @@
 
 </body>
 <script type="text/javascript">
-  $(document).ready(function() {
+  /*$(document).ready(function() {
     $.getJSON("../datad/volunteers.json", function(json) {
     var child = "";
     console.log(json["Volunteers"]);
@@ -81,6 +81,13 @@
     }
 
     listVolunteers.append(child);
+    });
+  });*/
+  $(document).ready(function() {
+    $.getJSON("../datad/volunteers.json", function(json) {
+      console.log(json["Volunteers"]);
+      // articleText.innerHTML = json["Services"][4]["Text"];
+      // articleDescription.innerHTML = json["Services"][4]["Description"];
     });
   });
 </script>

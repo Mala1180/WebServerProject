@@ -18,9 +18,9 @@ function goToArticle(article) {
   }
 }
 
-function getLabExams(username, password){
-  alert("ciao");
-}
+// function getLabExams(username, password){
+//   alert("ciao");
+// }
 
 function downloadServices(){
   var link = document.createElement('a');

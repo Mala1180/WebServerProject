@@ -38,6 +38,7 @@
       <div class="container">
         <h1 id="pageTitle" class="jumbotron-heading">Referti</h1>
         <p id="articleDescription" class="text-muted">
+          Ritira il tuo referto online oppure allo sportello
         </p>
         <p>
           <a href="../index.html" class="btn btn-primary my-2">Torna alla home</a>
@@ -48,6 +49,26 @@
     <section class="p-5">
       <div id="article">
         <p id="articleText">
+          On-line
+          Se sei residente in Lombardia puoi consultare on-line il tuo referto, chiedendo la password alle casse ticket del Policlinico.
+          Ricordati di presentarti con carta d’identità e tessera sanitaria.
+          Se consulti il referto online sei inoltre esonerato dal pagamento previsto in caso di mancato ritiro referto entro i 30 giorni dalla data indicata sul modulo.
+
+          I referti che puoi consultare on-line sono:
+          - Referto Visita Specialistica
+          - Referto Laboratorio (escluso pap test, istologici e citologici ed esami di diagnosi prenatale)
+          - Referto di Radiologia
+          - Verbale di Pronto Soccorso
+          - Lettera di Dimissione Ospedaliera
+
+          Consulta il sito della Regione Lombardia per altre informazioni
+
+          Allo sportello
+           
+          Attenzione! Le modalità di ritiro dei referti sono indicate sul modulo rilasciato dopo la visita o l’esame.
+          Al momento del ritiro è quindi importante presentarsi con il modulo rilasciato dopo la visita o l’esame e con un documento d’identità. In caso di delega sono indispensabili il documento sia del titolare sia del delegato.
+
+          I risultati non vengono comunicati telefonicamente nel rispetto della normativa sulla privacy.
         </p>
       </div>
     </section>
@@ -64,10 +85,10 @@
 </body>
 <script type="text/javascript">
   $(document).ready(function() {
-      $.getJSON("../articles/articles.json", function(json) {
-          articleText.innerHTML = json["Services"][1]["Text"];
-          articleDescription.innerHTML = json["Services"][4]["Description"];
-      });
+      //$.getJSON("../articles/articles.json", function(json) {
+          // articleText.innerHTML = json["Services"][1]["Text"];
+          // articleDescription.innerHTML = json["Services"][4]["Description"];
+      //});
   });
 </script>
 
