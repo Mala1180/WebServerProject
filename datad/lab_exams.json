@@ -1,0 +1,18 @@
+{
+  "lab_exams": [{
+      "Name": "Esame del sangue",
+      "Username": "paganelli",
+      "Data" : ""
+    },
+    {
+      "Name": "Esame del sangue",
+      "Username": "matteini",
+      "Data" : ""
+    },
+    {
+      "Name": "Tampone Rapido",
+      "Username": "paganelli",
+      "Data" : ""
+    }
+  ]
+}

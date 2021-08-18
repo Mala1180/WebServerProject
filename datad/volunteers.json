@@ -1,0 +1,38 @@
+{
+  "Volunteers": [{
+      "Nome": "Mario",
+      "Cognome" : "Rossi", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Luigi",
+      "Cognome" : "Bianchi", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Mattia",
+      "Cognome" : "Verdi", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Giacomo",
+      "Cognome" : "Neri", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Nicola",
+      "Cognome" : "Renati", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Roberto",
+      "Cognome" : "Grigi", 
+      "Telefono" "+39 0000000000"
+    },
+    {
+      "Nome": "Sauro",
+      "Cognome" : "Ceseta", 
+      "Telefono" "+39 0000000000"
+    }
+  ]
+}
