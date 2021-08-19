@@ -7,7 +7,7 @@
 
 
 \title{\textbf{Traccia 2: Python Web Server}
-Realizzazione di un server che gestisca un sito di articoli}
+Realizzazione di un server che gestisca un sito per un azienda ospedaliera}
 
 \author{
 \\Matteini Mattia
@@ -25,15 +25,25 @@ Realizzazione di un server che gestisca un sito di articoli}
 \chapter{Introduzione}
 
 \section{Descrizione}
-Si vuole realizzare un sito web per la gestione di articoli riguardanti gli eventi della città di Santarcangelo di Romagna.
+La piattaforma web realizzata elenca i principali servizi offerti dal Policlinico di Milano.
+Riassume tutte le informazioni principali per usufruire di essi e le istruzioni necessarie per poter consultare esami, risultati o il proprio fascicolo sanitario.
 \\
-All’interno di TuttoSantarcangelo saranno presenti tutti i principali eventi di Santarcangelo in un'unica piattaforma web. Potrà essere consultato dai turisti, dai cittadini più curiosi o da chi vuole mantenersi aggiornato sulle principali novità della città.
 \\
-Sarà presente una homepage del sito web contenente una piccola preview e descrizione dell’articolo oltre ad un bottone per consentirne il download e quindi la lettura anche in locale.
+Sarà presente una homepage del sito web contenente una piccola preview e descrizione  dei servizi offerti oltre ad un bottone per poter scaricare un pdf che raccoglie le informazioni più importanti relative alla struttura. 
 \\
-Nell’homepage saranno presenti link per consentire la lettura dell’intero articolo in una pagina html apposita ed in quest’ultima è presente un bottone per tornare all’homepage.
 \\
-Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link ai social network.
+Dalla homepage si possono visualizzare i servizi e si può navigare in pagine specifiche per ognuno di essi, all’interno di ogni pagina dedicata sarà presente anche un collegamento per tornare all’homepage.
+\\
+\\
+Inoltre sarà possibile conoscere i volontari che si offrono all’aiuto dei cittadini nella sezione dedicata “Volontari”. 
+All’interno di quest’ultima si potrà scaricare un elenco dei volontari nei quali sarà presente il numero di telefono ed un nominativo.
+\\
+\\
+/* Il download dei pdf è stato fatto in maniera molto semplificata ed occorrerà sostituire il pdf in caso di aggiornamento. */
+\\
+\\
+Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link Linkedin e Facebook del Policlinico di Milano.
+
 
 \clearpage
 
@@ -46,7 +56,7 @@ Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovar
     \item \textsc{Interruzione dell'esecuzione opportunamente gestita}
     \item \textsc{Pagina HTML singola per ogni servizio}
 \end{enumerate}
-
+ 
 
 
 \chapter{Design}
@@ -68,6 +78,12 @@ Successivamente definiamo un metodo che gestisca l’uscita dal programma e la c
 \\
 \\
 Infine abbiamo un \texttt{while True} dentro al quale chiamiamo il metodo \texttt{server\_forever} che dà vita a un nuovo thread che gestirà le richieste che arrivano e bloccherà il thread principale, inoltre lasciamo il \texttt{poll\_interval} di default che è di 0.5 secondi, quindi ogni mezzo secondo verrà controllato se viene ricevuto una richiesta di shutdown.
+
+
+\section{Threading}
+
+Per quanto riguarda la gestione di più richieste nello stesso momento, utilizzando un \textbf{ThreadingTCPServer} abbiamo un Main Thread avviato dal metodo \texttt{serve\_forever}, il quale crea un altro thread per ogni richiesta che arriva al server in modo da poterle gestire tutte contemporaneamente.
+
 
 \chapter{Guida}
 Per avviare il server basterà dare il seguente comando da terminale \texttt{"python server.py PORT"} dove PORT è il numero della porta che si vuole utilizzare per l’ascolto, se non si inserisce nessun parametro di default verrà utilizzata la porta 8080.
@@ -100,7 +116,7 @@ N.B. si può anche digitare l'indirizzo IP della macchina sulla quale sta girand
     \begin{center}
         \centering
         \hspace*{-0.8in}
-        \includegraphics[scale=.35]{img/Home1.png}
+        \includegraphics[scale=.35]{img/Home.png}
     \end{center}
 \end{figure}
 
