@@ -39,9 +39,6 @@ Inoltre sarà possibile conoscere i volontari che si offrono all’aiuto dei cit
 All’interno di quest’ultima si potrà scaricare un elenco dei volontari nei quali sarà presente il numero di telefono ed un nominativo.
 \\
 \\
-/* Il download dei pdf è stato fatto in maniera molto semplificata ed occorrerà sostituire il pdf in caso di aggiornamento. */
-\\
-\\
 Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovare un contatto mail oltre a link Linkedin e Facebook del Policlinico di Milano.
 
 
@@ -52,7 +49,7 @@ Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovar
 \begin{enumerate}
     \item \textsc{Il server dovrà mantenere più connessioni in contemporanea per garantire l'accesso a più utenti}
     \item \textsc{Nell’homepage dovranno essere presenti dei collegamenti ai servizi offerti}
-    \item \textsc{Possibilità di scaricare un pdf per ogni servizio}
+    \item \textsc{Possibilità di scaricare un pdf riassuntivo nel quale sono elencati i servizi}
     \item \textsc{Interruzione dell'esecuzione opportunamente gestita}
     \item \textsc{Pagina HTML singola per ogni servizio}
 \end{enumerate}
@@ -62,12 +59,23 @@ Un'ulteriore sezione è quella dei contatti nella quale l’utente potrà trovar
 \chapter{Design}
 
 \section{Client}
+Per lo sviluppo del client sono state usate le seguenti librerie minimizzate:
+
+\begin{enumerate}
+    \item \textsc{Bootstrap 4.5.2}
+    \item \textsc{JQuery 3.5.1}
+\end{enumerate}
+
+Per quanto riguarda la navigazione tra le pagine HTML del sito è stato sviluppato modificando il  \texttt{location.href} il quale effettua una richiesta GET alla risorsa desiderata. 
+\\
+\\
+Mentre il download dei pdf è stato fatto in maniera molto semplificata ed occorrerà sostituire il pdf in caso di aggiornamento dei servizi o dei volontari.
 
 \clearpage
 
 \section{Server}
 Il server scritto in \textbf{Python} utilizza il package \texttt{socketserver} e in particolare la classe \textbf{ThreadingTCPServer} per gestire molteplici e semplici richieste alla volta.
-Per la costruzione dell’istanza si inserisce nessun indirizzo locale nello specifico così in automatico riconoscerà l’accesso sia da localhost e da indirizzo ip del proprio computer nella rete al quale è connesso (esempio: 192.168.1.20.
+Per la costruzione dell’istanza non è stato inserito nessun indirizzo nello specifico così in automatico verrà riconosciuto l’accesso sia da localhost che da indirizzo ip del proprio computer nella rete al quale è connesso (esempio: 192.168.1.20).
 Per la gestione delle richieste utilizziamo la classe \textbf{SimpleHTTPRequestHandler}, appartenente al package \texttt{http}, che è più che necessario per il nostro applicativo.
 \\
 \\
@@ -77,12 +85,12 @@ Come operazioni preliminari rendiamo utilizzabile lo stesso indirizzo IP a più 
 Successivamente definiamo un metodo che gestisca l’uscita dal programma e la chiusura del socket server, per questo utilizziamo il package \texttt{signal} che ci permette di intercettare i diversi segnali mandati al processo, in questo caso un SIGINT (2).
 \\
 \\
-Infine abbiamo un \texttt{while True} dentro al quale chiamiamo il metodo \texttt{server\_forever} che dà vita a un nuovo thread che gestirà le richieste che arrivano e bloccherà il thread principale, inoltre lasciamo il \texttt{poll\_interval} di default che è di 0.5 secondi, quindi ogni mezzo secondo verrà controllato se viene ricevuto una richiesta di shutdown.
+Infine abbiamo un \texttt{while True} dentro al quale chiamiamo il metodo \texttt{server\_forever} che dà vita a un nuovo thread il quale gestirà le richieste che arrivano e bloccherà il thread principale, inoltre lasciamo il \texttt{poll\_interval} di default che è di 0.5 secondi, quindi ogni mezzo secondo verrà controllato se viene ricevuto una richiesta di shutdown.
 
 
 \section{Threading}
 
-Per quanto riguarda la gestione di più richieste nello stesso momento, utilizzando un \textbf{ThreadingTCPServer} abbiamo un Main Thread avviato dal metodo \texttt{serve\_forever}, il quale crea un altro thread per ogni richiesta che arriva al server in modo da poterle gestire tutte contemporaneamente.
+Per quanto riguarda la gestione di più richieste nello stesso momento, utilizzando un \textbf{ThreadingTCPServer} abbiamo un Main Thread avviato dal metodo \texttt{serve\_forever}, il quale crea un altro thread per ogni richiesta entrante in modo da poterle gestire tutte contemporaneamente.
 
 
 \chapter{Guida}
